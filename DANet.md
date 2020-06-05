@@ -1,5 +1,5 @@
 # Deep Attractor Network
-## Speech Separation Problem
+## 🗣 Speech Separation Problem
 ### Mixture in time domain:
 $$
 x(t) = \sum_{i=1}^C s_i(t)
@@ -26,7 +26,7 @@ $$
 
 ---
 
-## Ideal Masks
+## <i class="fas fa-mask"></i> Ideal Masks
 
 ### Ideal Binary Mask (IBM)
 $$
@@ -76,7 +76,7 @@ $$
 
 ---
 
-## Attractor Calculation
+## <i class="fas fa-magnet"></i> Attractor Calculation
 $$
 \mathbf{a}_i = \frac{
 \mathbf{y}_i \mathbf{V}^T
@@ -110,14 +110,14 @@ $$
 \tag{ADANet.9}
 $$
 
-## Distance Calculation
+## <i class="fas fa-ruler"></i> Distance Calculation
 $$
 \mathbf{d}_i = \mathbf{a}_i \mathbf{V}_i
 \quad i = 1,2, \ldots , C
 \tag{ADANet.10}
 $$
 
-## Mask Calculation
+## <i class="fas fa-mask"></i> Mask Calculation
 $$
 \hat{\mathbf{m}}_i = \mathcal{H}(\mathbf{d}_i)
 \quad i = 1,2, \ldots , C
@@ -150,4 +150,5 @@ $$
 
 $$
 l = \frac{1}{C} \sum_i \Vert \mathbf{x} \odot (\mathbf{m}_i - \hat{\mathbf{m}}_i) \Vert_2^2
+\tag{ADANet.13}
 $$
