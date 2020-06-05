@@ -1,5 +1,23 @@
 # Online Deep Attractor Network
 
+## Estimation of source assignment at time $t$
+
+$$
+\hat{\mathbf{Y}}_t = Softmax(\mathbf{A}_{t-1}\mathbf{V}_t)
+\tag{ODANet.4}
+$$
+
+## Attractor estimation at time $t$
+$$
+\hat{\mathbf{a}}_{t,i} = \frac{
+\hat{\mathbf{y}}_{t,i} \mathbf{V}_t^T
+}{
+\sum_{f}\hat{\mathbf{y}}_{t,i}
+}
+\quad i = 1,2, \ldots, C
+\tag{ADANet.7}
+$$
+
 ## Context-based weighting
 
 $$
