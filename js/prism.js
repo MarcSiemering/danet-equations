@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@MarcSiemering 
-PrismJS
-/
-prism
-109k
-115
-8k966
- Code
- Issues 151
- Pull requests 56 Actions
- Projects 0
- Wiki
- Security 0
- Insights
-prism/prism.js /
-@RunDevelopment RunDevelopment JS: Improved `get`/`set` and parameter detection (#2387)
-ed71515 7 days ago
-@Golmote@LeaVerou@RunDevelopment@zeitgeist87@milesj@valtlai@apfelbox@RonnyO@mseeboeck@ben-eb@Rosey@Mr0grog@RexSkz@dutchenkoOleg@rupl@ExE-Boss@TimWolla@tanakahisateru@CIAvash@sherblot@Rob--W@nauzilus@emmanuelgautier@MoOx@Jocs@geraintluff
-1163 lines (977 sloc)  29.5 KB
- 
-
 /* **********************************************
      Begin prism-core.js
 ********************************************** */
@@ -1189,15 +1160,3 @@ Prism.languages.js = Prism.languages.javascript;
 	});
 
 })();
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About

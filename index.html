@@ -9,6 +9,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/theme-simple.css">
   <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
@@ -39,7 +40,7 @@
             return "<p style='text-align:right;'>{docsify-updated}<p>\n\n" + html
               + '\n\n----\n'
               + editHtml
-          })
+          });
         }
       ],
     }
@@ -48,8 +49,6 @@
   <script src="js/search.min.js"></script>
   <script src="js/prism.js"></script>
   <script src="js/prism-python.min.js"></script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
 </body>
 </html>
