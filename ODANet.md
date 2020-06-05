@@ -73,14 +73,14 @@ $$
 $$
     \mathbf{f}_{t,i} =
     \sigma(
-    \mathbf{W}_\mathrm{f}
     \mathbf{h}_{t-1}
+    \mathbf{W}_\mathrm{f}
     +
-    \mathbf{U}_\mathrm{f}
     \mathbf{x}_t
+    \mathbf{U}_\mathrm{f}
     +
-    \mathbf{J}_\mathrm{f}
     \mathbf{a}_{t-1}
+    \mathbf{J}_\mathrm{f}
     +
     \mathbf{b}_\mathrm{f}
     )
@@ -89,15 +89,15 @@ $$
 $$
     \mathbf{g}_{t,i} =
     \sigma (
-       \mathbf{W}_\mathrm{g}
         \mathbf{h}_{t-1}
+        \mathbf{W}_\mathrm{g}
         +
-       \mathbf{U}_\mathrm{g}
         \mathbf{x}_t
+        \mathbf{U}_\mathrm{g}
         +
-       \mathbf{J}_\mathrm{g}
         \mathbf{a}_{t-1}
+        \mathbf{J}_\mathrm{g}
         +
-       \mathbf{b}_\mathrm{g}
+        \mathbf{b}_\mathrm{g}
     )
 $$
