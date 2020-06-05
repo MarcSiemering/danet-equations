@@ -11,25 +11,6 @@ X(f,t) = \sum_{i=1}^C S_i(t,f)
 \tag{ADANet.2}
 $$
 
----
-
-
-
-### Embedding Sapce
-$$
-\mathbf{V} = f(\mathbf{x}) \in \mathbb{R}^{K \times FT}
-\tag{ADANet.6}
-$$
-$$
-\mathbf{V} =
-\begin{bmatrix}
-V_{1,1}    & \cdots     & V_{1,ft}  \\
-\vdots     & \ddots     & \vdots    \\
-V_{i,k}     & \cdots    & V_{k,ft}
-\end{bmatrix}
-$$
-
----
 
 
 ## Clean estimate of speaker $i$:
@@ -79,6 +60,21 @@ $$
 
 ---
 
+### Embedding Sapce
+$$
+\mathbf{V} = f(\mathbf{x}) \in \mathbb{R}^{K \times FT}
+\tag{ADANet.6}
+$$
+$$
+\mathbf{V} =
+\begin{bmatrix}
+V_{1,1}    & \cdots     & V_{1,ft}  \\
+\vdots     & \ddots     & \vdots    \\
+V_{i,k}     & \cdots    & V_{k,ft}
+\end{bmatrix}
+$$
+
+---
 
 ## Attractor Calculation
 $$
@@ -126,4 +122,32 @@ $$
 \hat{\mathbf{m}}_i = \mathcal{H}(\mathbf{d}_i)
 \quad i = 1,2, \ldots , C
 \tag{ADANet.11}
+$$
+
+where $\mathcal{H}$ the softmax or sigmoid function applied to each element of $\mathbf{d}_i$
+
+$$
+\begin{cases}
+Softmax(\mathbf{d}_{i,ft}) = 
+\frac{
+    \exp(d_{i,ft})
+}{
+    \sum_{j=1}^C \exp(d_{j,ft})
+}
+\\
+\color{red}
+Sigmoid(\mathbf{d}_{i,ft}) = 
+\frac{
+    1
+}{
+    \sum_{j=1}^C (1+\exp(-d_{j,ft})
+}
+\end{cases}
+\tag{ADANet.12}
+$$
+
+## Loss
+
+$$
+l = \frac{1}{C} \sum_i \Vert \mathbf{x} \odot (\mathbf{m}_i - \hat{\mathbf{m}}_i) \Vert_2^2
 $$

@@ -11,8 +11,10 @@
 | $i$            | Speaker index                                |  $\lbrace 1,2, \ldots , C \rbrace$ |
 | $j$            | Anchor point index                           |  $\lbrace 1,2, \ldots , N \rbrace$ |
 | $K$            | Embedding dimension                          |  $\mathbb{N}$                      |
+| $l$            | Loss                                         |  $\mathbb{R}$                      |
 | $\mathbf{L}_p$ | Anchor point combination $p$                 |  $\mathbb{R}^{C \times K}$         |
-| $\mathbf{m}_i$ | Mask for speaker $i$                         |  $[0,1]^{1 \times FT}$         |
+| $\mathbf{m}_i$ | Mask for speaker $i$                         |  $[0,1]^{1 \times FT}$             |
+| $\hat{\mathbf{m}}_i$ | Estimated mask for speaker $i$         |  $[0,1]^{1 \times FT}$             |
 | $p$            | Anchor point combination index               |  $\lbrace 1,2, \ldots , {N \choose C} \rbrace$ |
 | $\rho$         | Threshold for the log magnetude spectrogram  |  $\mathbb{R}$                      |
 | $s_i(t)$       | Speaker source number $i$ in time domain     |  $\mathbb{R}$                      |
@@ -78,12 +80,14 @@
 ## L
 | Symbol         | Description                                  | Dimension                          |
 | -------------- | -------------------------------------------- | ---------------------------------- |
+| $l$            | Loss                                         |  $\mathbb{R}$                      |
 | $\mathbf{L}_p$ | Anchor point combination $p$                 |  $\mathbb{R}^{C \times K}$         |
 
 ## M
 | Symbol         | Description                                  | Dimension                          |
 | -------------- | -------------------------------------------- | ---------------------------------- |
-| $\mathbf{m}_i$ | Mask for speaker $i$                         |  $[0,1]^{1 \times FT}$         |
+| $\mathbf{m}_i$ | Mask for speaker $i$                         |  $[0,1]^{1 \times FT}$             |
+| $\hat{\mathbf{m}}_i$ | Estimated mask for speaker $i$         |  $[0,1]^{1 \times FT}$             |
 
 ## N
 
