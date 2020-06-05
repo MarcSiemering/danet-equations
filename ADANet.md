@@ -17,26 +17,27 @@ $$
 ## Distance between Anchors and Embedding Points
 $$
 \mathbf{D}_p = \mathbf{L}_p\mathbf{V}
+\tag{ADANet.14}
 $$
 
 ## Estimation of Speaker Assignment
 $$
 \hat{\mathbf{Y}}_p = softmax(\mathbf{D}_p)
+\tag{ADANet.15}
 $$
 
 ## Chosing Attractor combination set with largest distance between attractors. 
-> The set with the minimum in-set similarity (i.e. largest in-set
-distance between attractors) is selected for mask estimation.
 $$
 \mathbf{S}_p = \mathbf{A}_p\mathbf{A}_p^T, \quad \mathbf{S}_p \in \mathbb{R}^{C \times C}
+\tag{ADANet.16}
 $$
 $$
 s_p = \max \lbrace (s_{p_{ij}}) \rbrace, \quad i \neq j
+\tag{ADANet.17}
 $$
 $$
 \hat{\mathbf{A}} = \underset{\mathbf{A}_p}{\operatorname{argmin}} \lbrace (s_{p}) \rbrace, \quad p=1,2, \ldots, {N \choose C}
+\tag{ADANet.18}
 $$
-where $s_p$ is a scalar that epresents the maximum similarity
-between any two attractors in $\mathbf{A}_p$ and $\mathbf{A} \in \mathbb{R}^{C \times K}$ is the set set of attractors with smallest in-set similarity among all ${N \choose C}$ attractor sets. Given the attractors $\mathbf{A}$, the mask estimation is done in the same manner as equation 10 & 11.
 
 For more details see: [Understanding the use of in-set similarity in ADANet](https://hackmd.io/s65GzDjySUep9M5EXfwryw?view#Understanding-the-use-of-in-set-similarity-in-ADANet)
