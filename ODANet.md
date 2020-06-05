@@ -101,3 +101,17 @@ $$
         \mathbf{b}_\mathrm{g}
     )
 $$
+
+| Symbol                  | Description                                      | Dimension                 |
+| ----------------------- | ------------------------------------------------ | ------------------------- |
+| $\mathbf{h}_{t-1}$      | Output of last LSTM layer at time $t-1$          | $\mathbb{R}^{1 \times H}$ |
+| $\mathbf{W}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{H \times K}$ |
+| $\mathbf{W}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{H \times K}$ |
+| $\mathbf{x}_t$          | Feature vector containing magnitude spectrogram $\vert X(f,t) \vert$ at time $t$  |  $\mathbb{R}^{1 \times F}$ |
+| $\mathbf{U}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{F \times K}$ |
+| $\mathbf{U}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{F \times K}$ |
+| $\mathbf{a}_{t-1,i}$    | Attractor point for speaker $i$ at time $t-1$    | $\mathbb{R}^{1 \times K}$ |
+| $\mathbf{J}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{K \times K}$ |
+| $\mathbf{J}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{K \times K}$ |
+| $\mathbf{b}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{1 \times K}$ |
+| $\mathbf{b}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{1 \times K}$ |

@@ -9,16 +9,20 @@
 | $\alpha_{t,i}$ | Contexted-based update coefficient for speaker $i$'s attractor at time $t$ (ODANet) |  $\mathbb{R}$ |
 | $\boldsymbol{\alpha}_{t,i}$ | Dynamic weighted update coefficient for speaker $i$'s attractor at time $t$ (ODANet) |  $\mathbb{R}^{1 \times K}$ |
 | $\mathbf{b}_j$ | Anchor point number $j$                      |  $\mathbb{R}^{1 \times K}$         |
+| $\mathbf{b}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{1 \times K}$ |
+| $\mathbf{b}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{1 \times K}$ |
 | $C$            | Number of Speakers                           |  $\mathbb{N}$                      |
 | $\mathbf{D}_p$ | Distance between Embedding Points and Anchor point combination $p$  |  $\mathbb{R}^{C \times FT}$ |
 | $F$            | Number of frequency bins                     |  $\mathbb{N}$                      |
 | $f$            | Frequency index                              |  $\mathbb{N}$                      |
 | $\mathbf{f}_{t,i}$ | Forget Gate (ODANet, Dynamic Weighting)  |  $\mathbb{R}^{1 \times K}$         |
 | $\mathbf{g}_{t,i}$ | Gate (ODANet, Dynamic Weighting)         |  $\mathbb{R}^{1 \times K}$         |
-| $H$            | Output dimension of last LSTM layer          | \mathbb{N}                         |
-| \mathbf{h}_{t-1} | Output of last LSTM layer at time $t-1$    | \mathbb{R}^{1 \time H}             |
+| $H$            | Output dimension of last LSTM layer          | $\mathbb{N}$                       |
+| $\mathbf{h}_{t-1}$ | Output of last LSTM layer at time $t-1$  | $\mathbb{R}^{1 \times H}$          |
 | $i$            | Speaker index                                |  $\lbrace 1,2, \ldots , C \rbrace$ |
 | $j$            | Anchor point index                           |  $\lbrace 1,2, \ldots , N \rbrace$ |
+| $\mathbf{J}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{K \times K}$ |
+| $\mathbf{J}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{K \times K}$ |
 | $K$            | Embedding dimension                          |  $\mathbb{N}$                      |
 | $l$            | Loss                                         |  $\mathbb{R}$                      |
 | $\mathbf{L}_p$ | Anchor point combination $p$                 |  $\mathbb{R}^{C \times K}$         |
@@ -32,11 +36,16 @@
 | $\hat{\mathbf{s}}_i$ | Estimated magnitude spectrogram of the source $i$  |  $\mathbb{R}^{1 \times FT}$ |
 | $T$            | Number of time frames                        |  $\mathbb{N}$                      |
 | $t$            | Time index                                   |  $\mathbb{N}$                      |
+| $\mathbf{U}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{F \times K}$ |
+| $\mathbf{U}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{F \times K}$ |
 | $\mathbf{V}$   | Embedding                                    |  $\mathbb{R}^{K \times FT}$        |
 | $\mathbf{V}_t$ | Embedding at time $t$  (ODANet)              |  $\mathbb{R}^{K \times F}$         |
 | $\mathbf{w}$   | Threshold vector                             |  $\{0,1\}^{1 \times FT}$           |
+| $\mathbf{W}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{H \times K}$ |
+| $\mathbf{W}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{H \times K}$ |
 | $X(f,t)$       | Mixture in frequency domain                  |  $\mathbb{C}$                      |
 | $\mathbf{x}$   | Feature vector containing magnitude spectrogram $\vert X(f,t) \vert$  |  $\mathbb{R}^{1 \times FT}$ |
+| $\mathbf{x}_t$ | Feature vector containing magnitude spectrogram $\vert X(f,t) \vert$ at time $t$  |  $\mathbb{R}^{1 \times F}$ |
 | $x(t)$         | Mixture in time domain                       |  $\mathbb{R}$                      |
 | $\mathbf{y}_i$ | True source assignment/mask for speaker $i$  |  $[0,1]^{1 \times FT}$             |
 | $\hat{\mathbf{y}}_{t,i}$ | Estimated source assignment/mask for speaker $i$  at time $t$ (ODANet) |  $[0,1]^{1 \times F}$ |
@@ -57,6 +66,8 @@
 | Symbol         | Description                                  | Dimension                          |
 | -------------- | -------------------------------------------- | ---------------------------------- |
 | $\mathbf{b}_j$ | Anchor point number $j$                      |  $\mathbb{R}^{1 \times K}$         |
+| $\mathbf{b}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{1 \times K}$ |
+| $\mathbf{b}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{1 \times K}$ |
 
 ## C
 | Symbol         | Description                                  | Dimension                          |
@@ -85,8 +96,8 @@
 ## H
 | Symbol         | Description                                  | Dimension                          |
 | -------------- | -------------------------------------------- | ---------------------------------- |
-| $H$            | Output dimension of last LSTM layer          | \mathbb{N}                         |
-| \mathbf{h}_{t-1} | Output of last LSTM layer at time $t-1$    | \mathbb{R}^{1 \time H}             |
+| $H$            | Output dimension of last LSTM layer          | $\mathbb{N}$                       |
+| $\mathbf{h}_{t-1}$ | Output of last LSTM layer at time $t-1$  | $\mathbb{R}^{1 \times H}$          |
 
 
 ## I
@@ -98,6 +109,8 @@
 | Symbol         | Description                                  | Dimension                          |
 | -------------- | -------------------------------------------- | ---------------------------------- |
 | $j$            | Anchor point index                           |  $\lbrace 1,2, \ldots , N \rbrace$ |
+| $\mathbf{J}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{K \times K}$ |
+| $\mathbf{J}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{K \times K}$ |
 
 ## K
 | Symbol         | Description                                  | Dimension                          |
@@ -146,6 +159,10 @@
 | $\tau$         | Length of context window                     |  $[1,t-1]$                         |
 
 ## U
+| Symbol         | Description                                  | Dimension                          |
+| -------------- | -------------------------------------------- | ---------------------------------- |
+| $\mathbf{U}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{F \times K}$ |
+| $\mathbf{U}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{F \times K}$ |
 
 ## V
 | Symbol         | Description                                  | Dimension                          |
@@ -157,12 +174,15 @@
 | Symbol         | Description                                  | Dimension                          |
 | -------------- | -------------------------------------------- | ---------------------------------- |
 | $\mathbf{w}$   | Threshold vector                             |  $\{0,1\}^{1 \times FT}$           |
+| $\mathbf{W}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{H \times K}$ |
+| $\mathbf{W}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{H \times K}$ |
 
 ## X
 | Symbol         | Description                                  | Dimension                          |
 | -------------- | -------------------------------------------- | ---------------------------------- |
 | $X(f,t)$       | Mixture in frequency domain                  |  $\mathbb{C}$                      |
 | $\mathbf{x}$   | Feature vector containing magnitude spectrogram $\vert X(f,t) \vert$  |  $\mathbb{R}^{1 \times FT}$ |
+| $\mathbf{x}_t$ | Feature vector containing magnitude spectrogram $\vert X(f,t) \vert$ at time $t$  |  $\mathbb{R}^{1 \times F}$ |
 | $x(t)$         | Mixture in time domain                       |  $\mathbb{R}$                      |
 
 ## Y
