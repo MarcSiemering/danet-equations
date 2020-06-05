@@ -1,0 +1,55 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DANet Equations</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/theme-simple.css">
+  <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'DANet Equations',
+      homepage: 'index.md',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      fallbackLanguages: ["de"],
+      externalLinkTarget: '_blank',
+      search: {
+        depth: 2,
+        noData: {
+          '/': 'Keine Ergebnisse!'
+        },
+        placeholder: {
+          '/': 'Suche'
+        },
+      },
+      formatUpdated: '{DD}.{MM}.{YYYY} {HH}:{mm}',
+      plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            var url = 'https://github.com/mrsie/AppLab/blob/master/' + vm.route.file
+            var editHtml = '[Edit on GitHub](' + url + ')\n'
+            return "<p style='text-align:right;'>{docsify-updated}<p>\n\n" + html
+              + '\n\n----\n'
+              + editHtml
+          })
+        }
+      ],
+    }
+  </script>
+  <script src="js/docsify.min.js"></script>
+  <script src="js/search.min.js"></script>
+  <script src="js/prism.js"></script>
+  <script src="js/prism-python.min.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
