@@ -45,6 +45,41 @@ $$
 
 ---
 
+## Ideal Masks
+
+### Ideal Binary Mask (IBM)
+$$
+IBM_{i,ft} =
+\delta(\vert \mathbf{s}_{i,ft} \vert > \vert \mathbf{s}_{j,ft} \vert)
+\quad \forall j \neq i
+\tag{ADANet.5}
+$$
+
+### IDEAL Ratio Mask (IRM)
+$$
+IRM_{i,ft} =
+\frac{
+    \vert \mathbf{s}_{i,ft} \vert
+}{
+    \sum_{j=1}^C \vert \mathbf{s}_{j,ft} \vert
+}
+\tag{ADANet.5}
+$$
+
+### Wiener-Filter like Mask (WFM)
+$$
+WFM_{i,ft} =
+\frac{
+    \vert \mathbf{s}_{i,ft} \vert^2
+}{
+    \sum_{j=1}^C \vert \mathbf{s}_{j,ft} \vert^2
+}
+\tag{ADANet.5}
+$$
+
+---
+
+
 ## Attractor Calculation
 $$
 \mathbf{a}_i = \frac{
@@ -77,4 +112,18 @@ $$
 }
 \quad i = 1,2, \ldots, C
 \tag{ADANet.9}
+$$
+
+## Distance Calculation
+$$
+\mathbf{d}_i = \mathbf{a}_i \mathbf{V}_i
+\quad i = 1,2, \ldots , C
+\tag{ADANet.10}
+$$
+
+## Mask Calculation
+$$
+\hat{\mathbf{m}}_i = \mathcal{H}(\mathbf{d}_i)
+\quad i = 1,2, \ldots , C
+\tag{ADANet.11}
 $$
