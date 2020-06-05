@@ -2,10 +2,6 @@
 
 ## Table of Contens
 
-* test
-* 234
+* [Table of Variables](table_of_variables.md)
+* [DANet](DANet.md)
 
-$$
-x(t) = \sum_{i=1}^C s_i(t)
-\tag{ADANet.2}
-$$
