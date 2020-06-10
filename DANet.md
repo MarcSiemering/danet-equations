@@ -1,7 +1,3 @@
----
-tags: danet-equations, Masterarbiet
----
-
 # Deep Attractor Network
 ## Speech Separation Problem
 ### Mixture in time domain:
@@ -156,3 +152,6 @@ $$
 l = \frac{1}{C} \sum_i \Vert \mathbf{x} \odot (\mathbf{m}_i - \hat{\mathbf{m}}_i) \Vert_2^2
 \tag{ADANet.13}
 $$
+
+###### tags: `danet-equations` `Masterarbiet`
+
