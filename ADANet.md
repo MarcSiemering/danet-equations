@@ -1,3 +1,7 @@
+---
+tags: danet-equations, Masterarbeit, ADANet
+---
+
 # Anchored DANet
 
 ## Anchor points
