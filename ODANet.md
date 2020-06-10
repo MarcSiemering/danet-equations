@@ -50,11 +50,11 @@ $$
 
 $$
 \begin{aligned}
-            \alpha_{t,i} & =
-            \frac{\sum_f \hat{\mathbf{y}}_{t,i}}
-            {\sum_{j=t-\tau}^t \sum_f \hat{\mathbf{y}}_{j,i}} &
-            \tag{ODANet.10}
+    \alpha_{t,i} & =
+    \frac{\sum_f \hat{\mathbf{y}}_{t,i}}
+    {\sum_{j=t-\tau}^t \sum_f \hat{\mathbf{y}}_{j,i}} &
 \end{aligned}
+\tag{ODANet.10}
 $$
 
 # Dynamic weighting
