@@ -1,7 +1,3 @@
----
-tags: danet-equations, Masterarbeit, ODANet
----
-
 # Online Deep Attractor Network
 
 ## Estimation of source assignment at time $t$
@@ -119,3 +115,6 @@ $$
 | $\mathbf{J}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{K \times K}$ |
 | $\mathbf{b}_\mathrm{f}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{1 \times K}$ |
 | $\mathbf{b}_\mathrm{g}$ | Training Parameter of ODANet's Dynamic weighting | $\mathbb{R}^{1 \times K}$ |
+
+###### tags: `danet-equations` `Masterarbeit` `ODANet`
+
