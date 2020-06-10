@@ -1,7 +1,3 @@
----
-tags: danet-equations, Masterarbeit, ADANet
----
-
 # Anchored DANet
 
 ## Anchor points
@@ -45,3 +41,6 @@ $$
 $$
 
 For more details see: [Understanding the use of in-set similarity in ADANet](https://hackmd.io/s65GzDjySUep9M5EXfwryw?view#Understanding-the-use-of-in-set-similarity-in-ADANet)
+
+###### tags: `danet-equations` `Masterarbeit` `ADANet`
+
