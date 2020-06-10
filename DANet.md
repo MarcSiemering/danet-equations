@@ -1,3 +1,7 @@
+---
+tags: danet-equations, Masterarbiet
+---
+
 # Deep Attractor Network
 ## Speech Separation Problem
 ### Mixture in time domain:
