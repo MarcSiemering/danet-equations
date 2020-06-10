@@ -1,7 +1,3 @@
----
-tags: danet-equations, Masterarbeit
----
-
 # Table of Variables
 
 | Symbol         | Description                                  | Dimension                          |
@@ -201,4 +197,4 @@ tags: danet-equations, Masterarbeit
 
 
 
-
+###### tags: `danet-equations` `Masterarbeit`
